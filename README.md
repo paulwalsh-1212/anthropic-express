@@ -5,14 +5,14 @@ A lightweight Express.js middleware that adds LLM-powered HTTP configuration gen
 ## Installation
 
 ```bash
-pnpm add llm-express-config
+pnpm add anthropic-express
 ```
 
 ## Usage
 
 ```typescript
 import express from 'express';
-import { createLLMConfigHandler } from 'llm-express-config';
+import { createLLMConfigHandler } from 'anthropic-express';
 
 const app = express();
 

@@ -2,7 +2,7 @@
 
 import express, { Express } from 'express';
 import request from 'supertest';
-import { createLLMConfigHandler } from '../packages/anthripic-express/src/middleware';
+import { createLLMConfigHandler } from '../src/middleware';
 
 describe('LLM Express Config Middleware', () => {
   let app: Express;
@@ -13,13 +13,13 @@ describe('LLM Express Config Middleware', () => {
     app.use(express.json());
 
     // Add some mock routes to the app
-    app.get('/users', (req, res) => res.json([]));
-    app.post('/users', (req, res) => res.json({}));
-    app.get('/users/:id', (req, res) => res.json({}));
-    app.put('/users/:id', (req, res) => res.json({}));
-    app.delete('/users/:id', (req, res) => res.json({}));
-    app.get('/posts', (req, res) => res.json([]));
-    app.post('/posts', (req, res) => res.json({}));
+    app.get('/users', (_, res) => res.json([]));
+    app.post('/users', (_, res) => res.json({}));
+    app.get('/users/:id', (_, res) => res.json({}));
+    app.put('/users/:id', (_, res) => res.json({}));
+    app.delete('/users/:id', (_, res) => res.json({}));
+    app.get('/posts', (_, res) => res.json([]));
+    app.post('/posts', (_, res) => res.json({}));
 
     // Add our middleware
     app.use(

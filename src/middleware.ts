@@ -76,9 +76,10 @@ export function createLLMConfigHandler(options: LLMExpressConfigOptions = {}) {
 
       try {
         const content = completion.content[0];
-        const response = JSON.parse(
-          content.type === 'text' ? content.text : '{}'
-        ) as LLMResponse;
+        if (!content || content.type !== 'text') {
+          throw new Error('Bad LLM Completion');
+        }
+        const response = JSON.parse(content.text) as LLMResponse;
 
         // Validate the response structure
         if (
@@ -106,10 +107,10 @@ function extractRoutes(app: any): RouteInfo[] {
 
   function processRoute(route: any) {
     if (!route.route) return;
-
+    const methods = route.route.methods;
     routes.push({
       path: route.route.path,
-      method: Object.keys(route.route.methods)[0].toUpperCase(),
+      method: Object.keys(methods)[0]?.toUpperCase() || '',
       params: route.keys?.map((k: any) => k.name),
     });
   }

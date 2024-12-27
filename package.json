@@ -1,26 +1,12 @@
 {
-  "name": "llm-express-config",
-  "version": "0.1.0",
-  "description": "Express middleware for LLM-powered HTTP configuration generation",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/esm/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
-      }
-    },
-    "./package.json": "./package.json"
-  },
-  "type": "module",
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "name": "anthropic-express",
+  "version": "1.0.0",
+  "description": "LLM-powered configuration handler for Express.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test:build": "vite build && vitest && publint --strict"
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "files": [
     "dist"
@@ -31,7 +17,7 @@
     "middleware",
     "openai"
   ],
-  "author": "",
+  "author": "PW",
   "license": "MIT",
   "peerDependencies": {
     "express": "^4.x",
@@ -45,7 +31,7 @@
     "jest": "^29.7.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
-    "typescript": "^5.0.0"
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.33.1"
