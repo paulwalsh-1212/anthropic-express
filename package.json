@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "test": "jest"
   },
   "files": [
     "dist"
@@ -34,6 +35,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.33.1"
+    "@anthropic-ai/sdk": "^0.33.1",
+    "ts-node": "^10.9.2"
   }
 }

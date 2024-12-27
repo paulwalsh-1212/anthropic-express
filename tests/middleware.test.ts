@@ -25,7 +25,7 @@ describe('LLM Express Config Middleware', () => {
     app.use(
       createLLMConfigHandler({
         apiKeyEnvVar: 'ANTHROPIC_API_KEY',
-        model: 'claude-2',
+        model: 'claude-3-5-sonnet-20241022',
       })
     );
   });

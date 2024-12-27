@@ -30,7 +30,7 @@ Only respond with the JSON object, no additional text.
 export function createLLMConfigHandler(options: LLMExpressConfigOptions = {}) {
   const {
     apiKeyEnvVar = 'ANTHROPIC_API_KEY',
-    model = 'claude-2',
+    model = 'claude-3-5-sonnet-20241022',
     promptTemplate = DEFAULT_PROMPT_TEMPLATE,
   } = options;
 
