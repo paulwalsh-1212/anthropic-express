@@ -1,27 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "checkJs": true,
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "module": "ES2022",
-    "moduleResolution": "Node",
-    "noEmit": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ES2020"
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory of source files
+    "target": "ES2020", // Target JavaScript version
+    "module": "CommonJS", // Module system
+    "declaration": true, // Generate .d.ts files
+    "strict": true, // Enable strict type-checking options
+    "esModuleInterop": true, // Allow default imports from CommonJS
+    "skipLibCheck": true // Skip type checking of declaration files
   },
-  "include": ["src/**/*", "tests/middleware.test.ts"]
+  "include": ["src/**/*", "tests/middleware.test.ts"],
+  "exclude": ["node_modules", "**/*.test.ts"]
 }
