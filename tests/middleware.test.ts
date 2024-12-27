@@ -2,7 +2,7 @@
 
 import express, { Express } from 'express';
 import request from 'supertest';
-import { createLLMConfigHandler } from '../middleware';
+import { createLLMConfigHandler } from '../packages/anthripic-express/src/middleware';
 
 describe('LLM Express Config Middleware', () => {
   let app: Express;
