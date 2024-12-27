@@ -1,0 +1,35 @@
+{
+  "name": "llm-express-config",
+  "version": "0.1.0",
+  "description": "Express middleware for LLM-powered HTTP configuration generation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "express",
+    "llm",
+    "middleware",
+    "openai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "express": "^4.x",
+    "openai": "^4.x"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.33.1"
+  }
+}
